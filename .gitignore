@@ -1,4 +1,9 @@
-*.[oa]
-*~
-.*.c.swp
+*
+!*.c
+!*.cpp
+!*.sh
+!README
+!.gitignore
+!makefile
 资料/
+
