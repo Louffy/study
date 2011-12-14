@@ -1,9 +1,5 @@
-*
-!*.c
-!*.cpp
-!*.sh
-!README
-!.gitignore
-!makefile
+*.[oa]
+*~
+.*.c.swp
 资料/
-
+*.[zip|tar]

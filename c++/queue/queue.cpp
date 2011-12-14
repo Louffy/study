@@ -11,25 +11,26 @@ class QUEUE
 	};
 	NODE *front,*rear;
 	public:
-	    QUEUE();
+	    QUEUE()
+	    {
+			front=rear=NULL;
+			cout<<"queue()\n";
+        }
 		~QUEUE();
 		int insert(char v);
 		int remove(char &v);
 		int empty();
-		//int destroy();
 };
 QUEUE::NODE::NODE(char v)
 {
 	elem=v;
-	next=0;
+	next=NULL;
 }
-QUEUE::QUEUE()
-{
-	front=rear=0;
-}
+
+
 QUEUE::~QUEUE()
 {
-	NODE *p;
+	NODE *p=NULL;
 	while(front)
 	{
 		p=front->next;
@@ -40,13 +41,19 @@ QUEUE::~QUEUE()
 int QUEUE::insert(char v)
 {
 	NODE *p=new NODE(v);
-	if(p==0)return 0;
-	rear->next=p;
-	p->next=0;
+	if(p==NULL)return 0;
+	if(front==NULL){
+		front=p;
+	}
+	else{
+			rear->next=p;
+			
+	}
 	rear=p;
-	printf("%c\n",p->elem);
+	//cout<<v;
 	return 1;
 }
+
 int QUEUE::remove(char &c)
 {
 	NODE *p=front;
@@ -57,16 +64,16 @@ int QUEUE::remove(char &c)
 }
 int QUEUE::empty()
 {
-	if(front==rear==0)return 1;
+	if(front==NULL&&rear==NULL)return 1;
 	else return 0;
 }
 
 int main(void)
 {
 	QUEUE q;
-	int v;
-	q.insert(5);
-	q.insert(6);
+	char v;
+	q.insert('a');
+	q.insert('b');
 	
 }
 

@@ -17,6 +17,10 @@ error()
     echo "$1"
     exit 1
 }
-
+while [ -n "$1" ] ;do
+case $1 in
+	-h)help;shift $1;;#shift 是去除$1,把$2变成$1
+esac
+done
 #
 
