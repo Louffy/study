@@ -1,0 +1,50 @@
+import java.*;
+public class quick implements sort{
+	public int[] doSort(int[] array){
+		qsort(array,0,array.length-1);
+		return array;
+	}
+	public void qsort(int[] array,int i,int j){
+		if(i >= j)return;
+		int k = partition(array,i,j);
+		qsort(array,i,k-1);
+		qsort(array,k+1,j);
+	}
+	public int partition(int[] array,int p,int q){
+		int x = array[q];
+		while(p<q){
+			while(p<q){
+				if(array[p] < x)p++;
+				else{
+					swap(array,p,q);
+					q--;
+					break;
+				}
+			}
+			
+			while(p<q){
+				if(array[q] > x)q--;
+				else{
+					swap(array,p,q);
+					p++;
+					break;
+				}
+			}
+			
+		}
+		for(int n = 0; n < array.length; n++)
+			System.out.print(array[n] + " ");
+		System.out.println();
+		return p;
+	}
+	public static void swap(int a[],int i,int j){
+		int temp = a[i];
+		a[i] = a[j];
+		a[j] = temp;
+	}
+	public static void main(String[] args){
+		int[] data = {3,5,2,8,5,9,4};
+		quick qu = new quick();
+		data = qu.doSort(data);
+	}
+}
