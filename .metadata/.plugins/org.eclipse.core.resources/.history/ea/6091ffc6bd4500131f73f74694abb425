@@ -5,7 +5,7 @@ public class quick implements sort{
 		return array;
 	}
 	public void qsort(int[] array,int i,int j){
-		if(i >= j)return; //exit of recursion
+		if(i >= j)return;
 		int k = partition(array,i,j);
 		qsort(array,i,k-1);
 		qsort(array,k+1,j);

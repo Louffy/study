@@ -1,0 +1,16 @@
+import java.*;
+public class merge{
+	public int[] doSort(int[] array){
+		
+	}
+	public void mergesort(int[] array,int i,int j){
+		if(i==j)return;
+		int m = (i+j)/2;
+		mergesort(array,i,m);
+		mergesort(array,m+1,j);
+		mergearray(array,i,m,m+1,j);
+	}
+	public void mergearray(int[] array,int p,int m,int n,int q){
+		int[] temp[array.length];
+	}
+}
