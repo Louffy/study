@@ -1,0 +1,6 @@
+fivenum()summary()mean()median()var()sd()max()length()sum()sqrt().....math function
+table() count times
+names(counts) give names
+
+barplot() bar plot
+pie(counts,col = c("purple","green","white"))  pie chart
