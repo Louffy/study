@@ -1,0 +1,26 @@
+package yyjs;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+
+import ruc.irm.similarity.word.hownet2.concept.XiaConceptParser;
+
+public class test {
+	public static void main(String[] args) throws FileNotFoundException{
+		XiaConceptParser xParser = null;
+		String[] word1 = new String[1000];
+		String[] word2 = new String[1000];
+		double[] score = new double[1000];
+		String data = new String();
+		BufferedReader br = new BufferedReader(
+				new InputStreamReader(new FileInputStream("/home/zfx/pairs.txt")));
+		while((data = br.readLine()) != null){
+			System.out.println(data);
+		}
+		
+		
+	}
+
+}
